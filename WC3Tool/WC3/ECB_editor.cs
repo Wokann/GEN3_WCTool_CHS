@@ -32,7 +32,7 @@ namespace WC3Tool
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		public string berryfilter = "e-card Berry file|*.ecb|All Files (*.*)|*.*";
+		public string berryfilter = "e卡树果文件|*.ecb|所有文件(*.*)|*.*";
 		public string berry_sp_filter = "All Files (*.*)|*.*";
 		public byte[] ecbbuffer;
 		public byte[] spritebuf;
@@ -56,7 +56,7 @@ namespace WC3Tool
 				sprite_import_but.Enabled = true;
 				
 			}else{
-				MessageBox.Show("Invalid file size.");
+				MessageBox.Show("无效文件大小。");
 			}
 		}
 		
@@ -70,7 +70,7 @@ namespace WC3Tool
 			ecbfile.fix_berry_checksum();
 			//if (ecbfile.Edited)
 				FileIO.save_data(ecbfile.Data, berryfilter);
-			//else MessageBox.Show("Save has not been edited");
+			//else MessageBox.Show("存档未被编辑。");
 		}
 		void update_ecbData()
 		{
@@ -228,7 +228,7 @@ namespace WC3Tool
 		}
 		void Held_helpClick(object sender, EventArgs e)
 		{
-			MessageBox.Show("Known values:\n00: No effect\n04: Cures poison (Drash Berry)\n05: Cures burn (Japanese Yago Berry)\n06: Cures freeze (Pumkin Berry)\n08: Cures confusion (Japanese Touga Berry)\n23: Restores a lowered stat (Japanese Ginema Berry)\n28: Cures infatuation (Eggant Berry)");
+			MessageBox.Show("已知值：\n00：无效果\n04：治愈中毒（无青果）\n05：治愈灼伤（日版菩达果）\n06：治愈冰冻（瓜南果）\n08：治愈混乱（日版辛子果）\n23：被下降的能力变化归零（日版葱首果）\n28：治愈着迷状态（子茄果）");
 		}
 		void Sprite_export_butClick(object sender, EventArgs e)
 		{
@@ -241,12 +241,12 @@ namespace WC3Tool
 				if( filesize == ECB.SIZE_SPRITE+ECB.SIZE_PALETTE)
 				{				
 					ecbfile.set_full_sprite(spritebuf);
-					MessageBox.Show("Berry sprite injected.");
+					MessageBox.Show("树果sprite注入完成。");
 					
 				}else if (filesize == -1){
 					;
 				}else{
-					MessageBox.Show("Invalid file size.");
+					MessageBox.Show("无效文件大小。");
 				}
 		}
 		void Palette_import_butClick(object sender, EventArgs e)
@@ -256,12 +256,12 @@ namespace WC3Tool
 				if( filesize == ECB.SIZE_PALETTE)
 				{				
 					ecbfile.set_palette(paletebuf);
-					MessageBox.Show("Berry palette injected.");
+					MessageBox.Show("树果调色板注入完成。");
 					
 				}else if (filesize == -1){
 					;
 				}else{
-					MessageBox.Show("Invalid file size.");
+					MessageBox.Show("无效文件大小。");
 				}
 		}
 		void Palette_export_butClick(object sender, EventArgs e)
@@ -270,7 +270,7 @@ namespace WC3Tool
 		}
 		void Sprite_helpClick(object sender, EventArgs e)
 		{
-			MessageBox.Show("To edit the berry sprite you may use \"Nameless Sprite Editor (NSE) 2.1 beta\".\nSave the berry sprite as \".gba\" file and open in NSE with \"Load ROM\" option, then click navigate and input this values:\n\tImage offset: 20\n\tPalette ofsset: 0\n\tWidth: 6\n\tHeight: 6\n\nThen click open and edit the sprite. To save it simply use file->save or control+S (palette can be edited too, use the palette editor's save button to save it).\n\nTo inject the berry sprite you can simply import the modified berry \".gba\" file");
+			MessageBox.Show("编辑树果sprite你可以用\"Nameless Sprite Editor (NSE) 2.1 beta\".\n将树果sprite保存为\".gba\"文件并再NSE中用\"加载ROM\"选项打开：然后点击导航并输入这个值：\n\t图像偏移：20\n\t调色盘偏移：0\n\t宽度：6\n\t高度：6\n\n再点击打开并编辑sprite。保存则使用 file->save 或 control+S (调色盘也可被编辑，使用调色盘编辑器的保存按钮保存）。 \n\n若想导入树果sprite，你可以选择导入修改后的树果\".gba\"文件。");
 		}
 		void Jap_encodingCheckedChanged(object sender, EventArgs e)
 		{
@@ -281,15 +281,15 @@ namespace WC3Tool
 		}
 		void PphelpClick(object sender, EventArgs e)
 		{
-			MessageBox.Show("Healing HP and PP are mutually exclusive, you cannot heal PP and HP at the same time. HP takes precedence over PP if both are set. ");
+			MessageBox.Show("治愈HP与回复PP为互斥选项，你不能同时回复PP和HP。若两者同时选中，则HP优先度更高。");
 		}
 		void Modifier_helpClick(object sender, EventArgs e)
 		{
-			MessageBox.Show("PP restoring items have a maximum of 127.\nFor health restoration, 255 means max health, 254 means half max health, 253 is used by rare candy (only increase with level up).\nFor EV items, 0-127 increases EV, 128-255 decreases EV (128 is -1, 255 is -127).");
+			MessageBox.Show("PP恢复类道具最大为127。\n体力恢复类，255表示最大生命值，254表示最大生命值一般，253为神奇糖果使用（仅在升级时提升）.\n对于基础点数类，0-127增加基础点数, 128-255减少基础点数（128为-1, 255为-127）。");
 		}
 		void NoteClick(object sender, EventArgs e)
 		{
-			MessageBox.Show("Keep in mind that there are incompatibilities between flags. For example you can't make an HP restoring berry that also levels up a pokémon and expect it to be usable in battle, since a level up item can only be used from the bag.");
+			MessageBox.Show("请记住，旗标之间不存在兼容。例如你不能制作一个能回复HP的树果，同时它还能提升宝可梦等级，并可以在对战中使用，因为升级类道具只能从包包里使用。");
 		}
 		
 		void ECB_editorDragEnter(object sender, DragEventArgs e)

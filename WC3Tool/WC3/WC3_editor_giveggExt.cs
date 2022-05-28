@@ -142,7 +142,7 @@ Bitmap bitmap = (Bitmap)ResourceManager.GetObject("Image");
 		}
 		void Script_helpClick(object sender, EventArgs e)
 		{
-			MessageBox.Show("Use rom event flag: the script will use the flag that the Egg event found in the ROM uses to mark the EGG as received. The wondercard will be able to be sent and the receiver will be able to receive an egg (if the savegame still has the flag unset).\n\nKillscript: no flags are set in the savegame, so the only outcome is that the egg is received. The script gets erased from the savegame, so sharing the wondercard won't allow receiver to get an egg.");
+			MessageBox.Show("使用rom事件旗标：该脚本将使用在ROM中找到的用于标记已接收礼物蛋的事件旗标。神秘卡片将被发送，接收者将能够收到一个蛋（如果存档内的事件旗标未被标记）。\n\n杀死脚本：存档内不会设置旗标，所以最终只会收到一个蛋。脚本会被从存档内删除，所以分享神秘卡片不会让接收者获得蛋。");
 		}
 	}
 }

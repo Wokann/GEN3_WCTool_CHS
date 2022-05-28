@@ -33,7 +33,7 @@ namespace WC3Tool
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-		public string wcnfilter = "Wonder News file|*.wn3|All Files (*.*)|*.*";
+		public string wcnfilter = "神秘新闻文件|*.wn3|所有文件(*.*)|*.*";
 		public byte[] wcnbuffer = new byte[SAV3.WCN_SIZE];
 		public static wc3 wcnfile;
 		
@@ -94,7 +94,7 @@ namespace WC3Tool
 				if (filesize == SAV3.WCN_SIZE_jap)
 				{
 					japanese = true;
-					regionlab.Text = "JAP";
+					regionlab.Text = "日版";
 					header1.MaxLength = 20;
 					body1.MaxLength = 20;
 					body2.MaxLength = 20;
@@ -109,7 +109,7 @@ namespace WC3Tool
 				}else
 				{
 					japanese = false;
-					regionlab.Text = "USA/EUR";
+					regionlab.Text = "美/欧版";
 					header1.MaxLength = 40;
 					body1.MaxLength = 40;
 					body2.MaxLength = 40;
@@ -131,7 +131,7 @@ namespace WC3Tool
 				save_wc3_but.Enabled = true;
 				
 			}else{
-				MessageBox.Show("Invalid file size.");
+				MessageBox.Show("无效文件大小。");
 			}
 		}
 		void Load_wc3_butClick(object sender, EventArgs e)
@@ -148,7 +148,7 @@ namespace WC3Tool
 			wcnfile.fix_wcn_checksum();
 			//if (wcnfile.Edited)
 				FileIO.save_data(wcnfile.Data, wcnfilter);
-			//else MessageBox.Show("Save has not been edited");
+			//else MessageBox.Show("存档未被编辑。");
 		}
 
 		void WCN_editorLoad(object sender, EventArgs e)

@@ -61,14 +61,14 @@ namespace WC3Tool
 			// 
 			this.decortypebox.FormattingEnabled = true;
 			this.decortypebox.Items.AddRange(new object[] {
-			"Desk",
-			"Chair",
-			"Plant",
-			"Ornament",
-			"Mat",
-			"Poster",
-			"Doll",
-			"Cushion"});
+			"桌子",
+			"椅子",
+			"盆栽",
+			"物品",
+			"地毯",
+			"海报",
+			"布偶",
+			"垫子"});
 			this.decortypebox.Location = new System.Drawing.Point(9, 38);
 			this.decortypebox.Name = "decortypebox";
 			this.decortypebox.Size = new System.Drawing.Size(297, 21);
@@ -81,7 +81,7 @@ namespace WC3Tool
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(100, 19);
 			this.label1.TabIndex = 1;
-			this.label1.Text = "Decoration type";
+			this.label1.Text = "装饰类型";
 			// 
 			// label2
 			// 
@@ -89,22 +89,22 @@ namespace WC3Tool
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(100, 13);
 			this.label2.TabIndex = 3;
-			this.label2.Text = "Slot";
+			this.label2.Text = "槽位";
 			// 
 			// decorationbox
 			// 
 			this.decorationbox.FormattingEnabled = true;
 			this.decorationbox.Items.AddRange(new object[] {
-			"Empty",
-			"Small Desk",
-			"Pokémon Desk",
-			"Heavy Desk",
-			"Ragged Desk",
-			"Comfort Desk",
-			"Pretty Desk",
-			"Brick Desk",
-			"Camp Desk",
-			"Hard Desk"});
+			"空",
+			"小型桌子",
+			"精灵球桌子",
+			"沉重桌子",
+			"粗糙桌子",
+			"松软桌子",
+			"漂亮桌子",
+			"砖块桌子",
+			"露营桌子",
+			"坚硬桌子"});
 			this.decorationbox.Location = new System.Drawing.Point(135, 88);
 			this.decorationbox.Name = "decorationbox";
 			this.decorationbox.Size = new System.Drawing.Size(171, 21);
@@ -117,7 +117,7 @@ namespace WC3Tool
 			this.Decoration.Name = "Decoration";
 			this.Decoration.Size = new System.Drawing.Size(100, 13);
 			this.Decoration.TabIndex = 5;
-			this.Decoration.Text = "Decoration";
+			this.Decoration.Text = "装饰物品";
 			// 
 			// save_but
 			// 
@@ -125,7 +125,7 @@ namespace WC3Tool
 			this.save_but.Name = "save_but";
 			this.save_but.Size = new System.Drawing.Size(75, 23);
 			this.save_but.TabIndex = 6;
-			this.save_but.Text = "Save";
+			this.save_but.Text = "写入记录";
 			this.save_but.UseVisualStyleBackColor = true;
 			this.save_but.Click += new System.EventHandler(this.Save_butClick);
 			// 
@@ -153,7 +153,7 @@ namespace WC3Tool
 			this.add_but.Name = "add_but";
 			this.add_but.Size = new System.Drawing.Size(37, 23);
 			this.add_but.TabIndex = 7;
-			this.add_but.Text = "Add";
+			this.add_but.Text = "添加";
 			this.add_but.UseVisualStyleBackColor = true;
 			this.add_but.Click += new System.EventHandler(this.Add_butClick);
 			// 
@@ -163,7 +163,7 @@ namespace WC3Tool
 			this.del_but.Name = "del_but";
 			this.del_but.Size = new System.Drawing.Size(37, 23);
 			this.del_but.TabIndex = 8;
-			this.del_but.Text = "Del";
+			this.del_but.Text = "删除";
 			this.del_but.UseVisualStyleBackColor = true;
 			this.del_but.Click += new System.EventHandler(this.Del_butClick);
 			// 
@@ -182,7 +182,7 @@ namespace WC3Tool
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.decortypebox);
 			this.Name = "Decor_editor";
-			this.Text = "Decoration Inventory Editor";
+			this.Text = "装饰物品库存编辑器";
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
 			this.ResumeLayout(false);
 

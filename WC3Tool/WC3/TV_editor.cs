@@ -207,7 +207,7 @@ namespace WC3Tool
 				shows.shows[(int)(tv_slot.Value-1)].outbreak_move4 = (UInt16)outbreak_move4.SelectedIndex;
 			}
 			
-			MessageBox.Show("Outbreak Show Updated!");
+			MessageBox.Show("节目-大量出现 已更新！");
 		}
 		void Tv_statusSelectedIndexChanged(object sender, EventArgs e)
 		{
@@ -273,5 +273,10 @@ namespace WC3Tool
 		{
 			set_event();
 		}
-	}
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

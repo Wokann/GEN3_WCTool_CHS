@@ -36,7 +36,7 @@ namespace WC3Tool
 				int read = stream.Read(data, offset, remaining);
 				if (read <= 0)
 					throw new EndOfStreamException
-						($"End of stream reached with {remaining} bytes left to read");
+						($"到达流结束还需{remaining}字节要读取");
 				remaining -= read;
 				offset += read;
 			}
@@ -48,7 +48,7 @@ namespace WC3Tool
 			saveFile = new FileStream(path, FileMode.Open);
 			if (saveFile.Length < 1)
 			{
-				MessageBox.Show("Invalid file length", "Error");
+				MessageBox.Show("无效文件长度", "错误");
 				return;
 			}
 
@@ -101,7 +101,7 @@ namespace WC3Tool
 				//Write file
 				saveFile.Write(buffer, 0, buffer.Length);
 				saveFile.Close();
-				MessageBox.Show("File Saved.", "Save file");
+				MessageBox.Show("文件已保存", "保存文件");
 			}
 		}
 	}

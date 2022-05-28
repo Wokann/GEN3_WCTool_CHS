@@ -54,7 +54,7 @@ namespace WC3Tool
 		public void fix_ect_checksum()
 		{
 			UInt32 Chk = ect_checksum(SIZE_ECT-4, Data);
-			//MessageBox.Show("Checksum: " + Chk.ToString("X"));
+			//MessageBox.Show("校验值：" + Chk.ToString("X"));
 			setData(BitConverter.GetBytes(Chk).ToArray(), SIZE_ECT-4);
 		}
 		char[] SYMBOL = {

@@ -200,7 +200,7 @@ namespace WC3Tool
         }
         public void prompt_region(string text)
         {
-			DialogResult dialogResult = MessageBox.Show(text, "Region Input", MessageBoxButtons.YesNo);
+			DialogResult dialogResult = MessageBox.Show(text, "输入区域", MessageBoxButtons.YesNo);
 			if(dialogResult == DialogResult.Yes)
 			{
 				isjap = true;
@@ -220,7 +220,7 @@ namespace WC3Tool
         			isjap = true;
         		else
         			isjap = false;
-        			//prompt_region("Can't autodetect region for FRLG.\n\nIs this a Japanese savegame?");
+        			//prompt_region("无法自动判别FRLG的区域。\n\n这是日版游戏的存档吗?");
         	}
         	else
         	{
@@ -436,7 +436,7 @@ namespace WC3Tool
         	{
         		if (count.Max() == count[i]){
         			if(count[i]==0){
-        				MessageBox.Show("Couldn't auto-detect savegame's language. Defaulting to English, please select the correct value");
+        				MessageBox.Show("无法自动识别存档的语言。默认设置为英语，请选择合适的值。");
         				language = 2; //Default to english
         			}else{
         				language = i+1;
